@@ -17,6 +17,7 @@ app.use(cors({
 
 const port = process.env.PORT || 3000;
 const password = process.env.PASSWORD
+const username = process.env.USERNAME
 
 
 // Create a transport object for sending emails
@@ -25,7 +26,7 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'nathanim2tadele@gmail.com',
+        user: `${username}`,
         pass: `${password}`
     },
     tls : { rejectUnauthorized: false }
